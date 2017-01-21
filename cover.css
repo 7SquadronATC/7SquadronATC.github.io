@@ -2,6 +2,15 @@
  * Globals
  */
 
+ .social > a {
+  padding: 0 0.5em;
+}
+
+.social > a:hover {
+  color: #444;
+  text-decoration: none;
+}
+
 /* Links */
 a,
 a:focus,

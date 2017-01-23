@@ -1,7 +1,4 @@
-/*
- * Globals
- */
- .social > a {
+.social > a {
   padding: 0 0.5em;
 }
 
@@ -17,20 +14,10 @@ a:hover {
   color: #fff;
 }
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
 
 /*
  * Base structure
  */
-
 html,
 body {
   height: 100%;
@@ -66,7 +53,7 @@ body {
   margin-left: auto;
 }
 
-/* Larger padding top and bottom when small */
+/* Larger padding top and bottom of heading with smaller screen */
 .cover-heading {
   margin: 1.5rem 0;
 }
@@ -79,20 +66,13 @@ body {
 /*
  * Cover
  */
-
 .cover {
   padding: 0 1.5rem;
 }
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: bold;
-}
-
 
 /*
  * Footer
  */
-
 .mastfoot {
   color: rgba(255,255,255,.5);
 }
@@ -101,21 +81,27 @@ body {
 /*
  * Affix and center
  */
-
 @media (min-width: 40em) {
-  /* Less padding top and bottom when larger */
+  /* Less padding top and bottom of heading with larger screen */
   .cover-heading {
     margin: 0.5rem 0;
   }
-
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
   }
+  /* Handle the widths */
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
 }
 
 @media (min-width: 62em) {
-  .masthead,
   .mastfoot,
   .cover-container {
     width: 42rem;

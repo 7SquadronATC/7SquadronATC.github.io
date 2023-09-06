@@ -1,0 +1,1 @@
+export const ready = (fn: () => void): void => window.addEventListener('load', fn, false);

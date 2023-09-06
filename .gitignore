@@ -4,3 +4,6 @@ node_modules/
 # Compiled files
 dist/js/
 dist/css/
+
+# Other
+**/.DS_Store

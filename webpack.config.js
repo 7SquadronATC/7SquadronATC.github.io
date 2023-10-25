@@ -1,11 +1,15 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: `${ path.join(__dirname, 'src') }/main.ts`,
     output: {
-        path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     module: {
         rules: [{
@@ -30,10 +34,23 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts'],
+        alias: {
+            '@': path.join(__dirname, 'src'),
+        },
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'css/index.css',
+        }),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: `${ path.join(__dirname, 'public') }/index.html`,
+            scriptLoading: 'defer',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'public/assets', to: 'dist/assets' },
+            ],
         }),
     ],
 };

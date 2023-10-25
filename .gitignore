@@ -2,8 +2,7 @@
 node_modules/
 
 # Compiled files
-dist/js/
-dist/css/
+dist/
 
 # Other
 **/.DS_Store

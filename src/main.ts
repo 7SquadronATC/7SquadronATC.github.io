@@ -1,3 +1,4 @@
+import { Accordion } from './components/accordion';
 import { ready } from './helpers';
 import './styles/index.scss';
 
@@ -9,5 +10,10 @@ ready(() => {
             $el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
         });
+    });
+
+    const $accordions = document.querySelectorAll<HTMLElement>('.accordion');
+    $accordions.forEach($el => {
+        new Accordion($el);
     });
 });

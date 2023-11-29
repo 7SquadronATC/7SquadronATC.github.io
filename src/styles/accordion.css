@@ -1,0 +1,29 @@
+.accordion {
+    width: 100%;
+}
+
+.accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion__item {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 1.5rem;
+}
+
+.accordion__item:nth-child(1) {
+    border-top: 1px solid black;
+}
+
+.accordion__contents {
+    display: none;
+    margin-top: 1.5rem;
+}
+
+.accordion__item--open .accordion__contents {
+    display: block;
+}

@@ -13,7 +13,7 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.scss$/,
+            test: /\.s?css$/,
             use: [
                 MiniCssExtractPlugin.loader,
                 {
@@ -50,7 +50,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'public/assets', to: 'dist/assets' },
+                { from: 'public/assets', to: 'assets' },
             ],
         }),
     ],
